@@ -11,7 +11,7 @@ const movies = (state = [], action) => {
       return newState
     case 'DELETE_MOVIE':
       const index = newState.findIndex(m => m.movieName === action.value)
-      newState.splice(index, 1)
+      index > -1 && newState.splice(index, 1)
       return newState
     default:
       return state
